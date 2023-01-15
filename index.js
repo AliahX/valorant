@@ -437,11 +437,11 @@ function loadAllSkins() {
 function search(input) {
   $(".gunBox").each(function() {
     e = $(this);
-    e.find(".gunName").text().toLowerCase().includes(input.value.toLowerCase()) == -1 && e.find(".gunName").attr("collection").toLowerCase().indexOf(input.value.toLowerCase()) == -1 ? e.hide() : e.show();
+    e.find(".gunName").text().toLowerCase().includes(input.value.toLowerCase()) || e.find(".gunName").attr("collection").toLowerCase().includes(input.value.toLowerCase()) ? e.show() : e.hide();
   });
   $(".contractBox").each(function() {
     e = $(this);
-    e.find(".contractName").text().toLowerCase().indexOf(input.value.toLowerCase()) == -1 ? e.hide() : e.show();
+    e.find(".contractName").text().toLowerCase().includes(input.value.toLowerCase()) ? e.hide() : e.show();
   });
 }
 
